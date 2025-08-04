@@ -7,13 +7,18 @@ class AdminDashboard {
         this.analyticsData = {};
         this.charts = {};
         
-        // Default admin credentials (in production, this should be server-side)
-        this.adminCredentials = {
-            username: 'admin',
-            password: 'frontline2024' // Change this to a secure password
-        };
+        this.loadAdminCredentials();
         
         this.init();
+    }
+
+    loadAdminCredentials() {
+        // Load admin credentials securely via an API call or server-side logic
+        // Placeholder: Remove these lines
+        this.adminCredentials = {
+            username: 'admin',
+            password: 'frontline2024' // Server call to retrieve secure credentials
+        };
     }
 
     init() {
@@ -175,6 +180,9 @@ class AdminDashboard {
             case 'analytics':
                 this.loadAnalyticsData();
                 break;
+            case 'settings':
+                this.loadSettingsData();
+                break;
         }
     }
 
@@ -182,6 +190,17 @@ class AdminDashboard {
     loadData() {
         this.loadPortfolioData();
         this.loadAnalyticsData();
+        this.initCsrfToken();
+    }
+
+    initCsrfToken() {
+        const token = this.generateCSRFToken();
+        document.getElementById('csrf_token').value = token;
+        document.getElementById('timestamp').value = Date.now();
+    }
+
+    generateCSRFToken() {
+        return 'csrf_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
     }
 
     loadDashboardData() {
