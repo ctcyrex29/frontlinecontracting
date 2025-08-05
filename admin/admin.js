@@ -299,6 +299,7 @@ class AdminDashboard {
     }
 
     openPortfolioModal(itemId = null) {
+        console.log('openPortfolioModal called with id:', itemId);
         const modal = document.getElementById('portfolioModal');
         const modalTitle = document.getElementById('modalTitle');
         const form = document.getElementById('portfolioForm');
@@ -337,6 +338,15 @@ class AdminDashboard {
     }
 
     savePortfolioItem() {
+    // Helper to check if a string is a URL
+    function isUrl(str) {
+        try {
+            new URL(str);
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
         const form = document.getElementById('portfolioForm');
         const formData = new FormData(form);
         
@@ -346,7 +356,12 @@ class AdminDashboard {
             description: formData.get('description'),
             location: formData.get('location'),
             date: formData.get('date'),
-            images: formData.get('images').split('\n').filter(url => url.trim()),
+            images: formData.get('images').split('\n').map(img => {
+    img = img.trim();
+    if (!img) return null;
+    if (isUrl(img)) return img;
+    return '/resources/' + img;
+}).filter(Boolean),
             challenges: formData.get('challenges')
         };
 
@@ -377,10 +392,12 @@ class AdminDashboard {
     }
 
     editPortfolioItem(itemId) {
+        console.log('editPortfolioItem called with id:', itemId);
         this.openPortfolioModal(itemId);
     }
 
     deletePortfolioItem(itemId) {
+        console.log('deletePortfolioItem called with id:', itemId);
         if (confirm('Are you sure you want to delete this project?')) {
             this.portfolioData = this.portfolioData.filter(item => item.id !== itemId);
             this.savePortfolioData();
@@ -705,6 +722,7 @@ class AdminDashboard {
 
 // Initialize admin dashboard
 const admin = new AdminDashboard();
+window.admin = admin;
 
 // Track page views for analytics
 function trackPageView(pageName) {
