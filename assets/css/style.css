@@ -10,8 +10,8 @@
     --primary-blue: #1e3a8a;
     --secondary-blue: #3b82f6;
     --light-blue: #60a5fa;
-    --accent-orange: #f97316;
-    --light-orange: #fb923c;
+    --accent-blue: #1e3a8a;
+    --light-blue: #60a5fa;
     --cream: #f8fafc;
     --white: #ffffff;
     --dark-gray: #1e293b;
@@ -375,7 +375,7 @@ main {
 /* CTA Section */
 .cta-section {
     padding: var(--section-padding);
-    background: linear-gradient(135deg, var(--accent-orange) 0%, var(--light-orange) 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
     color: var(--white);
     text-align: center;
 }
@@ -450,7 +450,7 @@ main {
 }
 
 .social-links a:hover {
-    background-color: var(--light-blue);
+    background-color: var(--secondary-blue);
     transform: translateY(-2px);
 }
 
@@ -572,7 +572,7 @@ html {
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
     color: var(--white);
     padding: 120px 0 80px;
     text-align: center;
@@ -602,7 +602,7 @@ html {
 }
 
 .story-text h2 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 1.5rem;
 }
 
@@ -646,7 +646,7 @@ html {
 
 .mission-card h3,
 .vision-card h3 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 1rem;
 }
 
@@ -681,7 +681,7 @@ html {
 }
 
 .value-card h3 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 1rem;
 }
 
@@ -726,7 +726,7 @@ html {
 }
 
 .member-info h3 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 0.5rem;
 }
 
@@ -739,7 +739,7 @@ html {
 /* Stats Section */
 .stats-section {
     padding: var(--section-padding);
-    background: linear-gradient(135deg, var(--accent-brown) 0%, var(--light-brown) 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
     color: var(--white);
 }
 
@@ -786,12 +786,12 @@ html {
 }
 
 .service-text h2 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 1.5rem;
 }
 
 .service-text h3 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin: 2rem 0 1rem 0;
 }
 
@@ -840,7 +840,7 @@ html {
 }
 
 .additional-service h3 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 1rem;
 }
 
@@ -866,7 +866,7 @@ html {
 }
 
 .benefit h3 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 1rem;
 }
 
@@ -902,7 +902,7 @@ html {
 }
 
 .contact-card h3 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 1rem;
 }
 
@@ -918,7 +918,7 @@ html {
 }
 
 .contact-form-container h2 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 1rem;
 }
 
@@ -962,7 +962,7 @@ html {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-green);
+    border-color: var(--primary-blue);
 }
 
 .form-group textarea {
@@ -991,7 +991,7 @@ html {
 }
 
 .sidebar-content h3 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 1rem;
 }
 
@@ -1006,7 +1006,7 @@ html {
 }
 
 .emergency-contact {
-    background: var(--primary-green);
+    background: var(--primary-blue);
     color: var(--white);
     padding: 1.5rem;
     border-radius: 10px;
@@ -1032,7 +1032,7 @@ html {
 
 .map-section h2 {
     text-align: center;
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 2rem;
 }
 
@@ -1061,7 +1061,7 @@ html {
 }
 
 .faq-item h3 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
@@ -1107,9 +1107,9 @@ html {
 
 .filter-btn {
     padding: 10px 20px;
-    border: 2px solid var(--primary-green);
+    border: 2px solid var(--primary-blue);
     background: transparent;
-    color: var(--primary-green);
+    color: var(--primary-blue);
     border-radius: 25px;
     cursor: pointer;
     transition: var(--transition);
@@ -1118,7 +1118,7 @@ html {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background-color: var(--primary-green);
+    background-color: var(--primary-blue);
     color: var(--white);
 }
 
@@ -1194,7 +1194,7 @@ html {
 
 .view-project-btn {
     background: var(--white);
-    color: var(--primary-green);
+    color: var(--primary-blue);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -1213,13 +1213,13 @@ html {
 }
 
 .portfolio-info h3 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 0.5rem;
 }
 
 .project-category {
     display: inline-block;
-    background-color: var(--light-green);
+    background-color: var(--light-blue);
     color: var(--white);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -1285,7 +1285,7 @@ html {
 }
 
 .close-modal:hover {
-    color: var(--primary-green);
+    color: var(--primary-blue);
 }
 
 .modal-body {
@@ -1329,11 +1329,11 @@ html {
 
 .thumbnail:hover,
 .thumbnail.active {
-    border-color: var(--primary-green);
+    border-color: var(--primary-blue);
 }
 
 .project-details h2 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 0.5rem;
 }
 
@@ -1367,7 +1367,7 @@ html {
 
 .project-description h3,
 .project-challenges h3 {
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 1rem;
 }
 

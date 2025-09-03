@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="resources/logo/logo300.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Frontline Construction - Reliable and innovative construction company specializing in residential and commercial projects. Quality workmanship, timely delivery, and customer satisfaction.">
@@ -18,7 +19,10 @@
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
-                    <h2>Frontline Construction</h2>
+                    <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                        <img src="resources/logo/logo300.png" alt="Frontline Contracting Pvt Ltd Logo" style="height:40px; width:auto; margin-right:10px;">
+                        <h2 style="margin:0; color:var(--primary-blue);">Frontline Contracting Pvt Ltd</h2>
+                    </a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link active">Home</a></li>
@@ -39,6 +43,16 @@
     </header>
 
     <main>
+        <section class="map-section" style="margin: 40px 0; text-align: center;">
+            <h2>Our Location</h2>
+            <div style="width:100%;max-width:600px;margin:0 auto;">
+                <iframe
+                    src="https://www.google.com/maps?q=9th+Floor+BARD+House,+69+Samora+Machel+Ave,+Harare,+Zimbabwe&output=embed"
+                    width="100%" height="350" style="border:0; border-radius: 8px;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
@@ -175,41 +189,29 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Frontline Construction</h3>
-                    <p>Building excellence, delivering satisfaction.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><span>📘</span></a>
-                        <a href="#" aria-label="Instagram"><span>📷</span></a>
-                        <a href="#" aria-label="LinkedIn"><span>💼</span></a>
-                    </div>
+                <div class="footer-section about">
+                    <h3>Frontline Contracting Pvt Ltd</h3>
+                    <p>&copy; 2025 Frontline Contracting Pvt Ltd. All rights reserved.</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="services.html#residential">Residential Construction</a></li>
-                        <li><a href="services.html#commercial">Commercial Projects</a></li>
-                        <li><a href="services.html#renovations">Renovations</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
                         <li><a href="blog.html">Blog</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-section contact">
                     <h4>Contact</h4>
-                    <p>📞 00263-242-797241 / 3</p>
-                    <p>📧 info@frontlinecontracting.net</p>
-                    <p>📍 9th Floor BARD House, 69 Samora Machel Ave, Harare, Zimbabwe</p>
+                    <p>Email: <a href="mailto:info@frontlinecontracting.net">info@frontlinecontracting.net</a></p>
+                    <p>Phone: <a href="tel:00263242797241">00263-242-797241 / 3</a></p>
+                    <p>Mobile: <a href="tel:00263715887199">00263 715 887 199</a><br><a href="tel:00263714755022">00263 714 755 022</a><br><a href="tel:00263734176488">00263 734 176 488</a></p>
+                    <p>Address: 9th Floor BARD House<br>69 Samora Machel Ave<br>Harare, Zimbabwe</p>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Frontline Construction. All rights reserved.</p>
             </div>
         </div>
     </footer>

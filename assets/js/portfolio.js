@@ -105,42 +105,102 @@ document.addEventListener('DOMContentLoaded', function() {
         const savedData = localStorage.getItem('portfolioData');
         let portfolioData = [];
 
-        if (savedData) {
+        console.log('Saved portfolioData:', savedData);
+        if (savedData && JSON.parse(savedData).length > 0) {
             portfolioData = JSON.parse(savedData);
         } else {
-            // Default portfolio data if no admin data exists
-            portfolioData = [
-                {
-                    id: 1,
-                    title: "Modern Office Complex",
-                    category: "commercial",
-                    description: "A state-of-the-art office complex featuring sustainable design and modern amenities.",
-                    location: "Harare CBD",
-                    date: "2024-01-15",
-                    images: ["https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800"],
-                    challenges: "Complex foundation work due to soil conditions. Implemented advanced piling techniques."
-                },
-                {
-                    id: 2,
-                    title: "Residential Estate Development",
-                    category: "residential",
-                    description: "Luxury residential estate with 50 units, featuring modern architecture and landscaping.",
-                    location: "Borrowdale, Harare",
-                    date: "2023-12-20",
-                    images: ["https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800"],
-                    challenges: "Coordinated multiple contractors and maintained quality standards across all units."
-                },
-                {
-                    id: 3,
-                    title: "Highway Bridge Construction",
-                    category: "infrastructure",
-                    description: "Major bridge construction project connecting two major highways.",
-                    location: "Mutare Highway",
-                    date: "2023-11-10",
-                    images: ["https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800"],
-                    challenges: "Complex engineering requirements and traffic management during construction."
-                }
+            // If no admin data, show all images from resources folder as portfolio items
+            // This list can be generated server-side, but for static use, we'll hardcode the file names
+            const resourceImages = [
+                "IMG-20250805-WA0040.jpg",
+                "IMG-20250805-WA0045.jpg",
+                "IMG-20250805-WA0046.jpg",
+                "IMG-20250805-WA0047.jpg",
+                "IMG-20250805-WA0048.jpg",
+                "IMG-20250805-WA0049.jpg",
+                "IMG-20250805-WA0050.jpg",
+                "IMG-20250805-WA0061.jpg",
+                "IMG-20250805-WA0062.jpg",
+                "IMG-20250805-WA0065.jpg",
+                "IMG-20250805-WA0066.jpg",
+                "IMG-20250805-WA0067.jpg",
+                "IMG-20250805-WA0068.jpg",
+                "IMG-20250805-WA0069.jpg",
+                "IMG-20250805-WA0070.jpg",
+                "IMG-20250805-WA0071.jpg",
+                "IMG-20250805-WA0072.jpg",
+                "IMG-20250805-WA0073.jpg",
+                "IMG-20250805-WA0074.jpg",
+                "IMG-20250805-WA0075.jpg",
+                "IMG-20250805-WA0076.jpg",
+                "IMG-20250805-WA0077.jpg",
+                "IMG-20250805-WA0078.jpg",
+                "IMG-20250805-WA0079.jpg",
+                "IMG-20250805-WA0080.jpg",
+                "IMG-20250805-WA0081.jpg",
+                "IMG-20250805-WA0082.jpg",
+                "IMG-20250805-WA0083.jpg",
+                "IMG-20250805-WA0084.jpg",
+                "IMG-20250805-WA0085.jpg",
+                "IMG-20250805-WA0086.jpg",
+                "IMG-20250805-WA0087.jpg",
+                "IMG-20250805-WA0088.jpg",
+                "IMG-20250805-WA0089.jpg",
+                "IMG-20250805-WA0090.jpg",
+                "IMG-20250805-WA0091.jpg",
+                "IMG-20250805-WA0092.jpg",
+                "IMG-20250805-WA0093.jpg",
+                "IMG-20250805-WA0094.jpg",
+                "IMG-20250805-WA0095.jpg",
+                "IMG-20250805-WA0096.jpg",
+                "IMG-20250805-WA0097.jpg",
+                "IMG-20250805-WA0098.jpg",
+                "IMG-20250805-WA0099.jpg",
+                "IMG-20250805-WA0100.jpg",
+                "IMG-20250805-WA0101.jpg",
+                "IMG-20250805-WA0102.jpg",
+                "IMG-20250805-WA0103.jpg",
+                "IMG-20250805-WA0104.jpg",
+                "IMG-20250805-WA0105.jpg",
+                "IMG-20250805-WA0106.jpg",
+                "IMG-20250805-WA0107.jpg",
+                "IMG-20250805-WA0108.jpg",
+                "IMG-20250805-WA0109.jpg",
+                "IMG-20250805-WA0110.jpg",
+                "IMG-20250805-WA0111.jpg",
+                "IMG-20250805-WA0112.jpg",
+                "IMG-20250805-WA0113.jpg",
+                "IMG-20250805-WA0114.jpg",
+                "IMG-20250805-WA0115.jpg",
+                "IMG-20250805-WA0116.jpg",
+                "IMG-20250805-WA0117.jpg",
+                "IMG-20250805-WA0121.jpg",
+                "IMG-20250805-WA0122.jpg",
+                "IMG-20250805-WA0123.jpg",
+                "IMG-20250805-WA0124.jpg",
+                "IMG-20250805-WA0125.jpg",
+                "IMG-20250805-WA0126.jpg",
+                "IMG-20250805-WA0127.jpg",
+                "IMG-20250805-WA0128.jpg",
+                "IMG-20250805-WA0129.jpg",
+                "IMG-20250805-WA0130.jpg",
+                "IMG-20250805-WA0131.jpg",
+                "IMG-20250805-WA0132.jpg"
             ];
+            portfolioData = resourceImages.map((img, idx) => {
+                const imgPath = "/resources/" + img;
+                console.log('Adding fallback image:', imgPath);
+                return {
+                    id: idx + 1,
+                    title: `Project Image ${idx + 1}`,
+                    category: "general",
+                    description: "Portfolio project image.",
+                    location: "",
+                    date: "",
+                    images: [imgPath],
+                    challenges: ""
+                };
+            });
         }
 
         // Clear existing content
