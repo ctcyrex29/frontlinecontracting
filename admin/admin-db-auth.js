@@ -19,6 +19,10 @@ class AdminDashboardDBAuth extends AdminDashboard {
             return res.json();
         })
         .then(data => {
+            // NOTE: For true production security, a secure, HTTP-only cookie should be used
+            // instead of localStorage. This makes the token inaccessible to client-side scripts,
+            // mitigating XSS attacks. The server-side code (admin-auth.js) would need to be
+            // modified to set the cookie.
             const token = this.generateToken();
             const expiry = new Date().getTime() + (24 * 60 * 60 * 1000);
             localStorage.setItem('adminToken', token);
@@ -38,11 +42,19 @@ class AdminDashboardDBAuth extends AdminDashboard {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         const errorDiv = document.getElementById('loginError');
+        
+        // Client-side validation
+        if (!username || !password) {
+            errorDiv.textContent = 'Username and password cannot be empty.';
+            errorDiv.style.display = 'block';
+            return;
+        }
+        
         this.authenticate(username, password).then(success => {
             if (success) {
                 errorDiv.style.display = 'none';
             } else {
-                errorDiv.textContent = 'Invalid username or password';
+                errorDiv.textContent = 'Invalid username or password.';
                 errorDiv.style.display = 'block';
             }
         });
@@ -54,14 +66,22 @@ class AdminDashboardDBAuth extends AdminDashboard {
         const currentPassword = document.getElementById('currentPassword').value;
         const newPassword = document.getElementById('newPassword').value;
         const confirmPassword = document.getElementById('confirmPassword').value;
+        
+        // Client-side validation
+        if (!newPassword || !confirmPassword || !currentPassword) {
+            this.showMessage('All password fields are required.', 'error');
+            return;
+        }
+
         if (newPassword !== confirmPassword) {
-            this.showMessage('New passwords do not match', 'error');
+            this.showMessage('New passwords do not match.', 'error');
             return;
         }
         if (newPassword.length < 8) {
-            this.showMessage('Password must be at least 8 characters long', 'error');
+            this.showMessage('Password must be at least 8 characters long.', 'error');
             return;
         }
+        
         fetch('/api/admin/change-password', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -70,14 +90,15 @@ class AdminDashboardDBAuth extends AdminDashboard {
         .then(res => res.json())
         .then(data => {
             if (data.success) {
-                this.showMessage('Password updated successfully', 'success');
+                this.showMessage('Password updated successfully. Please log in with your new password.', 'success');
                 document.getElementById('changePasswordForm').reset();
+                this.logout(); // The fix: Log the user out after a successful password change
             } else {
-                this.showMessage(data.error || 'Password update failed', 'error');
+                this.showMessage(data.error || 'Password update failed.', 'error');
             }
         })
         .catch(() => {
-            this.showMessage('Password update failed', 'error');
+            this.showMessage('Password update failed.', 'error');
         });
     }
 }
