@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,30 +9,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="logo">
-                    <h2>Frontline Construction</h2>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About Us</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                    <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
-                    <li><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <?php
+    include "includes/head.php";
+    ?>
+
 
     <main>
         <!-- Page Header -->
@@ -47,23 +30,23 @@
             <div class="container">
                 <div class="contact-grid">
                     <div class="contact-card">
-    <div class="contact-icon">📞</div>
-    <h3>Phone</h3>
-    <p>00263-242-797241 / 3</p>
-    <p>Mon-Fri: 8:00 AM - 6:00 PM</p>
-</div>
+                        <div class="contact-icon">📞</div>
+                        <h3>Phone</h3>
+                        <p>00263-242-797241 / 3</p>
+                        <p>Mon-Fri: 8:00 AM - 6:00 PM</p>
+                    </div>
                     <div class="contact-card">
-    <div class="contact-icon">📧</div>
-    <h3>Email</h3>
-    <p>info@frontlinecontracting.net</p>
-    <p>We respond within 24 hours</p>
-</div>
+                        <div class="contact-icon">📧</div>
+                        <h3>Email</h3>
+                        <p>info@frontlinecontracting.net</p>
+                        <p>We respond within 24 hours</p>
+                    </div>
                     <div class="contact-card">
-    <div class="contact-icon">📍</div>
-    <h3>Address</h3>
-    <p>9th Floor BARD House</p>
-    <p>69 Samora Machel Ave, Harare, Zimbabwe</p>
-</div>
+                        <div class="contact-icon">📍</div>
+                        <h3>Address</h3>
+                        <p>9th Floor BARD House</p>
+                        <p>69 Samora Machel Ave, Harare, Zimbabwe</p>
+                    </div>
                     <div class="contact-card">
                         <div class="contact-icon">⏰</div>
                         <h3>Business Hours</h3>
@@ -81,7 +64,7 @@
                     <div class="contact-form-container">
                         <h2>Get a Free Quote</h2>
                         <p>Fill out the form below and we'll get back to you within 24 hours with a detailed quote for your project.</p>
-                        
+
                         <form id="contact-form" class="contact-form" method="POST" action="#" novalidate>
                             <input type="hidden" name="csrf_token" id="csrf_token" value="">
                             <input type="hidden" name="timestamp" id="timestamp" value="">
@@ -92,17 +75,17 @@
                                 <label for="name">Full Name *</label>
                                 <input type="text" id="name" name="name" required>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="email">Email Address *</label>
                                 <input type="email" id="email" name="email" required>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="phone">Phone Number</label>
                                 <input type="tel" id="phone" name="phone">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="service">Service Type</label>
                                 <select id="service" name="service">
@@ -114,7 +97,7 @@
                                     <option value="other">Other</option>
                                 </select>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="project-type">Project Type</label>
                                 <select id="project-type" name="project-type">
@@ -127,7 +110,7 @@
                                     <option value="other">Other</option>
                                 </select>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="budget">Budget Range</label>
                                 <select id="budget" name="budget">
@@ -140,7 +123,7 @@
                                     <option value="not-sure">Not sure yet</option>
                                 </select>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="timeline">Preferred Timeline</label>
                                 <select id="timeline" name="timeline">
@@ -153,12 +136,12 @@
                                     <option value="flexible">Flexible</option>
                                 </select>
                             </div>
-                            
+
                             <div class="form-group full-width">
                                 <label for="message">Project Description *</label>
                                 <textarea id="message" name="message" rows="5" placeholder="Please describe your project in detail..." required></textarea>
                             </div>
-                            
+
                             <div class="form-group full-width">
                                 <label class="checkbox-label">
                                     <input type="checkbox" id="newsletter" name="newsletter">
@@ -166,13 +149,13 @@
                                     Subscribe to our newsletter for construction tips and updates
                                 </label>
                             </div>
-                            
+
                             <div class="form-group full-width">
                                 <button type="submit" class="btn btn-primary">Send Message</button>
                             </div>
                         </form>
                     </div>
-                    
+
                     <div class="contact-sidebar">
                         <div class="sidebar-content">
                             <h3>Why Choose Us?</h3>
@@ -184,7 +167,7 @@
                                 <li>✅ On-time completion</li>
                                 <li>✅ Competitive pricing</li>
                             </ul>
-                            
+
                             <div class="emergency-contact">
                                 <h4>Emergency Service</h4>
                                 <p>For urgent construction issues:</p>
@@ -202,14 +185,14 @@
             <div class="container">
                 <h2>Find Us</h2>
                 <div class="map-container">
-                    <iframe 
-    src="https://www.google.com/maps?q=9th+Floor+BARD+House,+69+Samora+Machel+Ave,+Harare,+Zimbabwe&output=embed"
-    width="100%" 
-    height="450" 
-    style="border:0; border-radius:8px;" 
-    allowfullscreen="" 
-    loading="lazy">
-</iframe>
+                    <iframe
+                        src="https://www.google.com/maps?q=9th+Floor+BARD+House,+69+Samora+Machel+Ave,+Harare,+Zimbabwe&output=embed"
+                        width="100%"
+                        height="450"
+                        style="border:0; border-radius:8px;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
                 </div>
             </div>
         </section>
@@ -251,49 +234,12 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Frontline Construction</h3>
-                    <p>Building excellence, delivering satisfaction.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><span>📘</span></a>
-                        <a href="#" aria-label="Instagram"><span>📷</span></a>
-                        <a href="#" aria-label="LinkedIn"><span>💼</span></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html#residential">Residential Construction</a></li>
-                        <li><a href="services.html#commercial">Commercial Projects</a></li>
-                        <li><a href="services.html#renovations">Renovations</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section contact">
-    <h4>Contact</h4>
-    <p>Email: <a href="mailto:info@frontlinecontracting.net">info@frontlinecontracting.net</a></p>
-    <p>Phone: <a href="tel:00263242797241">00263-242-797241 / 3</a></p>
-    <p>Mobile: <a href="tel:00263715887199">00263 715 887 199</a><br><a href="tel:00263714755022">00263 714 755 022</a><br><a href="tel:00263734176488">00263 734 176 488</a></p>
-    <p>Address: 9th Floor BARD House<br>69 Samora Machel Ave<br>Harare, Zimbabwe</p>
-</div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 <a href="mailto:inkgenius.co@gmail.com" style="color:inherit;text-decoration:underline;">Inkgenius.co</a></p>
-            </div>
-        </div>
-    </footer>
+    <?php
+    include "includes/foot.php";
+    ?>
+
 
     <script src="assets/js/script.js"></script>
 </body>
-</html> 
+
+</html>

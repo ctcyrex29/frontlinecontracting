@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,27 +10,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
-    <div id="loginScreen" class="login-screen">
-        <div class="login-container">
-            <div class="login-header">
-                <h2><i class="fas fa-shield-alt"></i> Admin Access</h2>
-                <p>Frontline Contracting Dashboard</p>
-            </div>
-            <form id="loginForm" class="login-form">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-            <div id="loginError" class="error-message" style="display: none;"></div>
-        </div>
-    </div>
+
 
     <div id="adminDashboard" class="admin-dashboard" style="display: none;">
         <header class="admin-header">
@@ -49,17 +32,17 @@
         <nav class="admin-nav">
             <ul>
                 <li><a href="#dashboard" class="nav-link active" data-section="dashboard">
-                    <i class="fas fa-chart-line"></i> Dashboard
-                </a></li>
+                        <i class="fas fa-chart-line"></i> Dashboard
+                    </a></li>
                 <li><a href="#portfolio" class="nav-link" data-section="portfolio">
-                    <i class="fas fa-images"></i> Portfolio Management
-                </a></li>
+                        <i class="fas fa-images"></i> Portfolio Management
+                    </a></li>
                 <li><a href="#analytics" class="nav-link" data-section="analytics">
-                    <i class="fas fa-chart-bar"></i> Analytics
-                </a></li>
+                        <i class="fas fa-chart-bar"></i> Analytics
+                    </a></li>
                 <li><a href="#settings" class="nav-link" data-section="settings">
-                    <i class="fas fa-cog"></i> Settings
-                </a></li>
+                        <i class="fas fa-cog"></i> Settings
+                    </a></li>
             </ul>
         </nav>
 
@@ -69,7 +52,7 @@
                     <h2>Dashboard Overview</h2>
                     <p>Welcome to your admin dashboard</p>
                 </div>
-                
+
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-icon">
@@ -128,15 +111,15 @@
                         <i class="fas fa-plus"></i> Add New Project
                     </button>
                 </div>
-                
+
                 <div class="portfolio-approval" id="portfolioApproval">
                     <h4>Approve Images from Resources Folder</h4>
                     <div id="resourcesFileList">
-                        </div>
+                    </div>
                 </div>
 
                 <div class="portfolio-grid" id="portfolioGrid">
-                    </div>
+                </div>
             </section>
 
             <section id="analytics" class="content-section">
@@ -144,7 +127,7 @@
                     <h2>Analytics</h2>
                     <p>Comprehensive website statistics</p>
                 </div>
-                
+
                 <div class="analytics-grid">
                     <div class="analytics-card">
                         <h3>Traffic Sources</h3>
@@ -155,20 +138,20 @@
                         <canvas id="deviceTypeChart"></canvas>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col">
                         <div class="analytics-card popular-pages">
                             <h3>Popular Pages</h3>
                             <ul id="popularPagesList">
-                                </ul>
+                            </ul>
                         </div>
                     </div>
                     <div class="col">
                         <div class="analytics-card recent-activity">
                             <h3>Recent Activity</h3>
                             <ul id="recentActivityList">
-                                </ul>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -199,7 +182,7 @@
                             <button type="submit" class="btn btn-primary">Update Password</button>
                         </form>
                     </div>
-                    
+
                     <div class="settings-card">
                         <h3>Website Settings</h3>
                         <form id="websiteSettingsForm">
@@ -224,7 +207,7 @@
     </div>
 
     <div id="notificationMessage" class="notification-message" style="display: none;"></div>
-    
+
     <div id="portfolioModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -232,7 +215,7 @@
             <form id="portfolioForm">
                 <input type="hidden" name="csrf_token" id="csrf_token">
                 <input type="hidden" name="timestamp" id="timestamp">
-                
+
                 <div class="form-group">
                     <label for="projectTitle">Project Title</label>
                     <input type="text" id="projectTitle" name="title" required pattern=".{3,}" title="Title must be at least 3 characters long">
@@ -279,4 +262,5 @@
     <script src="admin.js"></script>
     <script src="admin-db-auth.js"></script>
 </body>
+
 </html>

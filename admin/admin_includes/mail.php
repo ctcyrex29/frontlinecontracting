@@ -1,4 +1,5 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -11,13 +12,14 @@ require __DIR__ . '/../../includes/PHPMailer-master/src/PHPMailer.php';
 require __DIR__ . '/../../includes/PHPMailer-master/src/SMTP.php';
 
 // Include database connection
-$file_path = $_SERVER['DOCUMENT_ROOT'] . '/mcctelehealth/patient/patient_includes/database.php';
+$file_path = $_SERVER['DOCUMENT_ROOT'] . '/frontline/admin/admin_includes/database.php';
 if (!file_exists($file_path)) {
     die("<h1>404 Page Not Found</h1> <p>" . htmlspecialchars($file_path) . "</p>");
 }
 include $file_path;
 
-function sendEmail($to, $toName, $subject, $body, $altBody = 'This is a test email sent by Chris!') {
+function sendEmail($to, $toName, $subject, $body, $altBody = 'This is a test email sent by Chris!')
+{
     $mail = new PHPMailer(true);
     $mail->SMTPOptions = array(
         'ssl' => array(
@@ -43,7 +45,7 @@ function sendEmail($to, $toName, $subject, $body, $altBody = 'This is a test ema
         $mail->Host = 'mail.masvingocity.org.zw'; // Your SMTP server
         $mail->SMTPDebug = 0; // Set to 2 for verbose debug output
         $mail->SMTPAuth = true;
-        $mail->Username = 'test25@masvingocity.org.zw';// Your Email address
+        $mail->Username = 'test25@masvingocity.org.zw'; // Your Email address
         $mail->Password = 'Test2025@#'; // Your Email password or App Password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Use 'tls' for port 587 or 'ssl' for port 465
         $mail->Port = 465;
@@ -73,8 +75,3 @@ function sendEmail($to, $toName, $subject, $body, $altBody = 'This is a test ema
 // } else {
 //     echo $result;
 // }
-
-
-
-
-?>
